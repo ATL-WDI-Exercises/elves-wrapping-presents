@@ -20,5 +20,5 @@ jasmine-node --verbose spec
 You can check your code for good programming practices by running:
 
 ```bash
-jscs *.js
+jscs .
 ```
