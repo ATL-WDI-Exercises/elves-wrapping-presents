@@ -1,11 +1,11 @@
 /*
    Return the wrapping paper needed to wrap a box, including some additional
-   paper needed to wrap the present (based on the smallest side of the box)
+   paper needed to wrap the present (based on the smallest side of the box).
    The boxes argument is assumed to be an array of strings each containing the
    dimensions of a box to be wrapped, for example:
      ['2x3x4', '3x5x8', '1x1x10']
 */
-function wrappingCalculator(boxes) {
+function paperCalculator(boxes) {
     var total = 0;
     var l,w,h,dimension,extra;
     for (var i = 0; i < boxes.length; i++) {
@@ -24,4 +24,4 @@ function wrappingCalculator(boxes) {
 // var paper = wrappingCalculator(['2x3x4', '3x5x8', '1x1x10']);
 // console.log('paper needed: ' + paper);
 
-exports.wrappingCalculator = wrappingCalculator;
+exports.paperCalculator = paperCalculator;
