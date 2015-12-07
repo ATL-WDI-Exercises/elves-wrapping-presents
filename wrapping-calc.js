@@ -6,8 +6,22 @@
      ['2x3x4', '3x5x8', '1x1x10']
 */
 function wrappingCalculator(boxes) {
-  // TODO: return the correct amount of wrapping paper needed.
-  return 0;
-};
+    var total = 0;
+    var l,w,h,dimension,extra;
+    for (var i = 0; i < boxes.length; i++) {
+        dimension = boxes[i].split('x');
+        l = dimension[0];
+        w = dimension[1];
+        h = dimension[2];
+        extra = dimension.sort(function(a,b) { return a-b; });
+        total += (2*l*w) + (2*w*h) + (2*h*l) + (extra[0] * extra[1]);
+    }
+    console.log(total);
+
+  return total;
+}
+
+// var paper = wrappingCalculator(['2x3x4', '3x5x8', '1x1x10']);
+// console.log('paper needed: ' + paper);
 
 exports.wrappingCalculator = wrappingCalculator;
