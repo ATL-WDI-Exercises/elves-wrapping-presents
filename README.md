@@ -8,6 +8,10 @@ For example:
 
 A present with dimensions `2x3x4` requires `2*6 + 2*12 + 2*8 = 52` square feet of wrapping paper plus 6 square feet of slack, for a total of 58 square feet. A present with dimensions `1x1x10` requires `2*1 + 2*10 + 2*10 = 42` square feet of wrapping paper plus 1 square foot of slack, for a total of 43 square feet. All numbers in the elves' list are in feet. How many total square feet of wrapping paper should they order?
 
+## Metadata
+
+TAGS=[javascript, control-flow]
+
 ## Instructions
 
 Add your solution to the `wrapping-calc.js` file.
@@ -17,8 +21,15 @@ You can test your solution by running the JavasScript unit tests:
 jasmine-node --verbose spec
 ```
 
-You can check your code for good programming practices by running:
+You can check your code for good programming practices by running `jscs`:
 
 ```bash
 jscs .
+```
+
+If you don't already have jasmine-node and jscs, you can install them via:
+
+```bash
+npm install -g jasmine-node
+npm install -g jscs
 ```
