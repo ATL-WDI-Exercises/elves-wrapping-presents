@@ -1,7 +1,6 @@
-var wrappingCalculator = require('../wrapping-calc').wrappingCalculator;
-console.log(wrappingCalculator);
+var paperCalculator = require('../part1').paperCalculator;
 
-describe('wrappingCalculator', function() {
+describe('paperCalculator', function() {
   var testVector = [
     [['2x3x4'], 58],
     [['3x5x8'], 173],
@@ -11,7 +10,7 @@ describe('wrappingCalculator', function() {
 
   testVector.forEach(function(tv) {
     it('should return ' + tv[1] + ' for the boxes ' + tv[0], function() {
-      var result = wrappingCalculator(tv[0]);
+      var result = paperCalculator(tv[0]);
       expect(result).toBe(tv[1]);
     });
   });
