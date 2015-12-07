@@ -5,6 +5,22 @@
      ['2x3x4', '3x5x8', '1x1x10']
 */
 
+Array.min = function(array) {
+  return Math.min.apply(Math, array);
+};
+
+function getShortestDistance(dimensions) {
+  var d1 = 2 * (dimensions[0] + dimensions[1]);
+  var d2 = 2 * (dimensions[0] + dimensions[2]);
+  var d3 = 2 * (dimensions[1] + dimensions[2]);
+  var result = Array.min([d1, d2, d3]);
+  return result;
+}
+
+function getVolume(dimensions) {
+  return dimensions[0] * dimensions[1] * dimensions[2];
+}
+
 function ribbonCalculator(boxes) {
   var totalRibbon = 0;
 
@@ -13,17 +29,8 @@ function ribbonCalculator(boxes) {
       return parseInt(n, 10);
     });
 
-    // get shortest distance around box
-    var d1 = 2 * (dimensions[0] + dimensions[1]);
-    var d2 = 2 * (dimensions[0] + dimensions[2]);
-    var d3 = 2 * (dimensions[1] + dimensions[2]);
-    var shortest = d1 < d2 ? d1 : d2;
-    shortest = shortest < d3 ? shortest : d3;
-
-    // get volume of box
-    var volume = dimensions[0] * dimensions[1] * dimensions[2];
-
-    // calculate ribbon needed for this box and add it to the total
+    var shortest = getShortestDistance(dimensions);
+    var volume = getVolume(dimensions);
     totalRibbon += shortest + volume;
   });
   return totalRibbon;
