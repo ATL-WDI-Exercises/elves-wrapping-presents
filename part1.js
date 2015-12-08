@@ -11,7 +11,7 @@ function paperCalculator(boxes) {
   var l, w, h, extra;
 
   for (var i = 0; i < boxes.length; i++) {
-    dimension = boxes[i].split('x').map(function(a) { return parseInt(a, 10);});
+    dimension = boxes[i].split('x').map(Number);
     l = dimension[0];
     w = dimension[1];
     h = dimension[2];
