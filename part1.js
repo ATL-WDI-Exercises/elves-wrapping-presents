@@ -16,7 +16,7 @@ function paperCalculator(boxes) {
     //The first line of this function splits the string into an array of
     //[length,width,height]
 
-    var boxDimensions = boxString.split('x');
+    var boxDimensions = boxString.split('x').map(Number);
     var length = boxDimensions[0];
     var width = boxDimensions[1];
     var height = boxDimensions[2];

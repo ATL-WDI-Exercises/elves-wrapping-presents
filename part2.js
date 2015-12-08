@@ -12,7 +12,7 @@ function ribbonCalculator(boxes) {
   //array and still return the correct amount of ribbon.
   boxes.forEach(function(boxString) {
 
-    var boxDimensions = boxString.split('x');
+    var boxDimensions = boxString.split('x').map(Number);
 
     //This sort function sorts the length, height, and width by smallest to
     //largest.  This allows the program to call on the first 2 values of the
