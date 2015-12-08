@@ -13,7 +13,6 @@ function getBoxPerimeters(box) {
  var sorted = box.sort(function(a, b) { return a - b; })
  var perimeter = (2 * box[0]) + (2 * box[1])
  var extra = box[0] * box[1] * box[2]
- console.log(perimeter + extra)
  return perimeter + extra;
 }
 
