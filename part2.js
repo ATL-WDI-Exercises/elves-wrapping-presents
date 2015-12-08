@@ -10,7 +10,7 @@ function ribbonCalculator(boxes) {
   var extra, dimensionSort;
 
   for (var i = 0; i < boxes.length; i++) {
-    dimension = boxes[i].split('x');
+    dimension = boxes[i].split('x').map(function(a) { return parseInt(a, 10);});
     l = dimension[0];
     w = dimension[1];
     h = dimension[2];
