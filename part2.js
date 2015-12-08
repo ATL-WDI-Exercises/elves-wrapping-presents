@@ -7,7 +7,7 @@
 function ribbonCalculator(boxes) {
   var total = 0;
   var dimension = 0;
-  var extra, dimensionSort;
+  var extra, dimensionSort, l, w, h;
 
   for (var i = 0; i < boxes.length; i++) {
     dimension = boxes[i].split('x').map(Number);
