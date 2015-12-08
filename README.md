@@ -37,7 +37,14 @@ npm install -g jscs
 
 ## Part Two
 
-The elves are also running low on ribbon. Ribbon is all the same width, so
+  return box.map(function(l, w, h) {
+    var sorted = [l, w, h].sort(function(a, b) { return a - b; })
+    var s1 = sorted[0]
+    var s2 = sorted[0]
+    var times = sorted[0] * sorted[1] * sorted[2]
+    return s1 + s2 + times
+  })
+g low on ribbon. Ribbon is all the same width, so
 they only have to worry about the length they need to order, which they would
 again like to be exact.
 
