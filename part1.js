@@ -6,12 +6,15 @@
      ['2x3x4', '3x5x8', '1x1x10']
      lwh
 */
-var allBoxes = [];
-var all = [];
-var totalPaper = 0;
+
+//supply dimensions of boxes to wrap
 var input = ["2x3x4", "5x6x7"];
 
+//find total square footage of wrapping paper needed for boxes
 function paperCalculator(boxes) {
+  var allBoxes = [];
+  var all = [];
+  var totalPaper = 0;
 
   //split boxes into arrays
   for(var i = 0; i < boxes.length; i++) {
