@@ -12,8 +12,13 @@ function paperCalculator(boxes) {
     var length = parseInt(dimensions[0]);
     var width = parseInt(dimensions[1]);
     var height = parseInt(dimensions[2]);
+    var lAndW = length * width * 2;
+    var wAndH = width * height * 2;
+    var hAndL = height * length * 2;
+    var slack = Math.min(length*width, width*height, height*length);
+    var total += lAndW + wAndH + hAndL + slack;
   }
-  return 0;
+  return total;
 };
 
 exports.paperCalculator = paperCalculator;
