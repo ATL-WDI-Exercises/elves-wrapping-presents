@@ -7,6 +7,12 @@
 */
 function paperCalculator(boxes) {
   // TODO: return the correct amount of wrapping paper needed.
+  for (var i = 0; i < boxes.length; i++) {
+    var dimensions = boxes[i].split("x");
+    var length = parseInt(dimensions[0]);
+    var width = parseInt(dimensions[1]);
+    var height = parseInt(dimensions[2]);
+  }
   return 0;
 };
 
