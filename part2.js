@@ -22,7 +22,7 @@ function ribbonCalculator(boxes) {
 
     totalRibbon += (l * w * h) + (l + l + w + w); //adds sum needed for all boxes to one variable
   }
-  console.log('THE END' + totalRibbon);
+
   return totalRibbon;
 };
 

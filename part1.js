@@ -20,22 +20,18 @@ function paperCalculator(boxes) {
   //loop through allBoxes to calculate areas
   for (var y = 0; y < allBoxes.length; y++) {
     var lw = 2 * (allBoxes[y][0] * allBoxes[y][1]);
-    console.log(lw);
     var wh = 2 * (allBoxes[y][1] * allBoxes[y][2]);
-    console.log(wh);
     var lh = 2 * (allBoxes[y][0] * allBoxes[y][2]);
-    console.log(lh);
     var smallest = [];
 
     //calculates the smallest side of box
     smallest.push(lw,wh,lh);
     smallest = smallest.sort(function(a, b) { return a - b; });
     smallest = smallest[0] / 2;
-    console.log('smallest: ' + smallest);
 
     totalPaper += (lw + wh + lh + smallest); //adds sum needed for all boxes to one variable
   }
-  console.log('THE END' + totalPaper);
+
   return totalPaper;
 };
 
