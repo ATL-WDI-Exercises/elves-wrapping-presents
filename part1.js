@@ -8,26 +8,21 @@
 function paperCalculator(boxes) {
   // TODO: return the correct amount of wrapping paper needed.
 
-  var boxDimensions = [];
   var paperNeeded = 0;
-  for (i = 0; i <boxes.length; i++) {
-    var box = boxes[i].split('x').map(Number);
-  }
+  for (var i = 0; i <boxes.length; i++) {
+    var boxDimensions = boxes[i].split('x');
 
-  var length = boxDimensions[i][0];
-  var width = boxDimensions[i][1];
-  var height = boxDimensions[i][2];
+  var length = parseInt(boxDimensions[0]);
+  var width = parseInt(boxDimensions[1]);
+  var height = parseInt(boxDimensions[2]);
 
-  var side1 = length * width;
-  var side2 = width * height;
-  var side3 = length * height;
-  var smallestSide = [side1, side2, side3];
-  smallestSide.sort(function(a, b) {
-    return a - b;
-  });
+  var side1 = length * width * 2;
+  var side2 = width * height * 2;
+  var side3 = length * height * 2;
+  var smallestSide = Math.min(length * width, width * height, height * length);
 
-  paperNeeded = ((2 * side1) + (2 * side2) + (2 * side3) + smallestSide[0]);
-
+  paperNeeded += side1 + side2 + side3 + smallestSide;
+}
 
   return paperNeeded;
 };
