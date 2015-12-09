@@ -7,6 +7,7 @@
 */
 function paperCalculator(boxes) {
   // TODO: return the correct amount of wrapping paper needed.
+    var total = 0;
   for (var i = 0; i < boxes.length; i++) {
     var dimensions = boxes[i].split("x");
     var length = parseInt(dimensions[0]);
@@ -16,7 +17,7 @@ function paperCalculator(boxes) {
     var wAndH = width * height * 2;
     var hAndL = height * length * 2;
     var slack = Math.min(length*width, width*height, height*length);
-    var total += lAndW + wAndH + hAndL + slack;
+    total += lAndW + wAndH + hAndL + slack;
   }
   return total;
 };
