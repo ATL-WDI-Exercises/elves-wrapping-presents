@@ -8,39 +8,39 @@
 */
 
 //supply dimensions of boxes to wrap
-var input = ["2x3x4", "5x6x7"];
+var input = ["2x3x4", "3x5x8", "1x1x10"];
 
 //find total square footage of wrapping paper needed for boxes
 function paperCalculator(boxes) {
-  var allBoxes = [];
-  var all = [];
   var totalPaper = 0;
+  var allBoxes = [];
 
-  //split boxes into arrays
   for(var i = 0; i < boxes.length; i++) {
-    allBoxes.push(boxes[i].split('x'));
+    var box = boxes[i].split('x').map(Number);
+    allBoxes.push(box);
   }
 
   //loop through allBoxes to calculate areas
   for(var y = 0; y < allBoxes.length; y++) {
-      allBoxes[y][y] = parseInt(allBoxes[y][y], 10); //convert to numbers
-
       var lw = 2 * (allBoxes[y][0] * allBoxes[y][1]);
+      console.log(lw);
       var wh = 2 * (allBoxes[y][1] * allBoxes[y][2]);
+      console.log(wh);
       var lh = 2 * (allBoxes[y][0] * allBoxes[y][2]);
+      console.log(lh);
       var smallest = [];
 
       //calculates the smallest side of box
       smallest.push(lw,wh,lh);
       smallest = smallest.sort(function(a,b){return a - b});
-      smallest = smallest[0];
+      smallest = smallest[0]/2;
+      console.log('smallest: ' + smallest);
 
-      all.push(lw + wh + lh + smallest); //sum of all needed for one box
-      totalPaper += all[y]; //adds sum needed for all boxes to one variable
+      totalPaper += (lw + wh + lh + smallest); //adds sum needed for all boxes to one variable
   }
-
-  return totalPaper + " square feet are needed to wrap these packages.";
-
+  console.log('THE END' + totalPaper);
+  return totalPaper;
 };
 
 exports.paperCalculator = paperCalculator;
+

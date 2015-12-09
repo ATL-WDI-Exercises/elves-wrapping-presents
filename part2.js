@@ -6,6 +6,9 @@
 */
 function ribbonCalculator(boxes) {
   // TODO: return the correct amount of ribbon needed.
+
+
+
   return 0;
 };
 
