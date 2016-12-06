@@ -5,8 +5,24 @@
      ['2x3x4', '3x5x8', '1x1x10']
 */
 function ribbonCalculator(boxes) {
-  // TODO: return the correct amount of ribbon needed.
-  return 0;
+  var total = 0;
+  var dimension = 0;
+  var extra, dimensionSort, l, w, h;
+
+  for (var i = 0; i < boxes.length; i++) {
+    dimension = boxes[i].split('x').map(Number);
+    l = dimension[0];
+    w = dimension[1];
+    h = dimension[2];
+    extra = l * w * h;
+
+    dimensionSort = dimension.sort(function(a, b) {
+      return a - b;
+    });
+
+    total += (dimensionSort[0] * 2) + (dimensionSort[1] * 2) + extra;
+  }
+  return total;
 };
 
 exports.ribbonCalculator = ribbonCalculator;

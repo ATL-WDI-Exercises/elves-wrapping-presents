@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div id="names"></div>
+  <script>
+    namearray = ['bob','james','nick','dan','josh','bill'];
+    nameslist = document.getElementById('names');
+    function print(namearray) {
+         namearray.forEach(function(a) {
+             printToDom(a);
+         });
+     }
+
+     function lastOne(namearray) {
+        printToDom(namearray[namearray.length -1]);
+     }
+
+     function printToDom(a) {
+        nameslist.innerHTML += "<p>" + a + "</p>";
+     }
+
+   //print sort print
+   print(namearray);
+   print(namearray.sort());
+  </script>
+</body>
+</html>
